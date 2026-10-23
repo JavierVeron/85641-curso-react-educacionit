@@ -1,0 +1,14 @@
+#logo {
+  color:white;
+  background-color: blue;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.parrafo {
+  color: white;
+  background-color: black;
+  padding: 20px;
+  font-size: 20px;
+}
