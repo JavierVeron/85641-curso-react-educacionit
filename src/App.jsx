@@ -1,16 +1,16 @@
-import Curso from "./Curso"
-import Imagenes from "./Imagenes"
-import Titulo from "./Titulo"
+import Estados from "./Clase2/Estados"
+import Eventos from "./Clase2/Eventos"
+import Propiedades from "./Clase2/Propiedades"
+import Renderizacion from "./Clase2/Renderizacion"
 
 function App () {
   return (
-    <div>
-      <h1 id="logo">Educación IT</h1>
-      <Curso />
-      <Titulo />
-      <Curso />
-      <Imagenes />
-    </div>
+    <>
+      {/* <Renderizacion /> */}
+      {/* <Propiedades curso={"React JS"} academia={"Educación IT"} precio={120000} /> */}
+      {/* <Estados /> */}
+      <Eventos />
+    </>
   )
 }
 
