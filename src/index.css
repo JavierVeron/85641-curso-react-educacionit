@@ -12,3 +12,12 @@
   padding: 20px;
   font-size: 20px;
 }
+
+.boton {
+  color:white;
+  background-color: #15163d;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 30px;
+  text-decoration: none;
+}

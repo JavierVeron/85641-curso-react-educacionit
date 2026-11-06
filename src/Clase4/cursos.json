@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "nombre":"Curso de Desarrollo Web con HTML",
+        "slug":"curso-de-desarrollo-web-con-html",
+        "descripcion":"Aprende a construir tu propio sitio web en HTML desde cero. Domina el lenguaje nativo de internet e ingresa al mundo del desarrollo web.",
+        "precio":204400,
+        "precioDescuento":81760,
+        "duracion":"5 semanas",
+        "clases":9,
+        "nivel":"principiante"
+    },
+    {
+        "id":2,
+        "nombre":"Curso de Javascript desde cero",
+        "slug":"curso-de-javascript-desde-cero",
+        "descripcion":"Aprende a programar con el lenguaje más utilizado en internet para el desarrollo frontend de sitios web.",
+        "precio":204400,
+        "precioDescuento":81760,
+        "duracion":"5 semanas",
+        "clases":9,
+        "nivel":"principiante"
+    },
+    {
+        "id":3,
+        "nombre":"Curso de Javascript Desarrollador Avanzado",
+        "slug":"curso-de-javascript-desarrolador-avanzado",
+        "descripcion":"Domina la técnica avanzada de programación multiparadigma en ECMAScript y avanza en tu camino como desarrollador frontend.",
+        "precio":427700,
+        "precioDescuento":171080,
+        "duracion":"8 semanas",
+        "clases":15,
+        "nivel":"intermedio"
+    },
+    {
+        "id":4,
+        "nombre":"Curso de React.JS",
+        "slug":"curso-de-react-js",
+        "descripcion":"Domina la librería JavaScript más demandada en la industria para el desarrollo front end y construye un proyecto con las mejores prácticas del mercado laboral.",
+        "precio":534590,
+        "precioDescuento":213836,
+        "duracion":"8 semanas",
+        "clases":15,
+        "nivel":"avanzado"
+    }
+]
