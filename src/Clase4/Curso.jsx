@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import CursosJSON from "./cursos.json";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Certifica from "./Certifica";
+import { CartContext } from "../Clase6/context/CartContext";
 
 const Curso = () => {
+    const {agregarProducto} = useContext(CartContext);
     const [item, setItem] = useState({});
     const {id} = useParams();
 
@@ -32,6 +34,13 @@ const Curso = () => {
                 </div>
             </div>
             <Certifica />
+            <div className="container my-10">
+                <div className="row">
+                    <div className="col text-center">
+                        <button className="boton" onClick={() => {agregarProducto(item.id)}}>Comprar</button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
