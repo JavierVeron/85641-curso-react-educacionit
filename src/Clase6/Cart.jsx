@@ -1,10 +1,24 @@
 import { useContext } from "react"
 import { CartContext } from "./context/CartContext"
+import { useDispatch, useSelector } from "react-redux"
+import { QUITAR_PRODUCTO_ACTION, VACIAR_CARRITO_ACTION } from "../Clase10/redux/CartActions";
 
 const Cart = () => {
-    const {cart, quitarProducto, vaciarCarrito} = useContext(CartContext);
+    //const {cart, quitarProducto, vaciarCarrito, totalProductos, sumaProductos} = useContext(CartContext);
+    const cart = useSelector(state => state.items);
+    const totalProductos = useSelector(state => state.total);
+    const sumaProductos = useSelector(state => state.suma);
+    const dispatch = useDispatch();
 
-    if (cart.length == 0) {
+    const quitarProducto = (id) => {
+        dispatch(QUITAR_PRODUCTO_ACTION(id));
+    }
+
+    const vaciarCarrito = () => {
+        dispatch(VACIAR_CARRITO_ACTION);
+    }
+
+    if (totalProductos == 0) {
         return (
             <div className="container">
                 <div className="row">
@@ -25,26 +39,28 @@ const Cart = () => {
                     <table className="table">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">&nbsp;</th>
+                            <th scope="col" className="text-center">#</th>
+                            <th scope="col" className="text-center">Nombre</th>
+                            <th scope="col" className="text-center">Precio</th>
+                            <th scope="col" className="text-end"><button className="boton" onClick={vaciarCarrito}>Vaciar</button></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="text-end" colSpan={4}><button className="boton" onClick={vaciarCarrito}>Vaciar</button></td>
-                            </tr>
                             {
                                 cart.map(item => (
                                     <tr key={item.id}>
-                                        <td>{item.id}</td>
-                                        <td>{item.nombre}</td>
-                                        <td>${item.precio}</td>
+                                        <td className="align-middle">{item.id}</td>
+                                        <td className="align-middle">{item.nombre}</td>
+                                        <td className="align-middle text-center">${item.precio}</td>
                                         <td className="text-end"><button className="boton" onClick={() => {quitarProducto(item.id)}}>Eliminar</button></td>
                                     </tr>
                                 ))
                             }
+                            <tr>
+                                <td colSpan={2} className="text-center"><b>Total a Pagar</b></td>
+                                <td className="text-center"><b>${sumaProductos}</b></td>
+                                <td>&nbsp;</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -2,12 +2,19 @@ import { useParams } from "react-router-dom";
 import CursosJSON from "./cursos.json";
 import { useContext, useEffect, useState } from "react";
 import Certifica from "./Certifica";
-import { CartContext } from "../Clase6/context/CartContext";
+import { useDispatch } from "react-redux";
+import { AGREGAR_PRODUCTO_ACTION } from "../Clase10/redux/CartActions";
+//import { CartContext } from "../Clase6/context/CartContext";
 
 const Curso = () => {
-    const {agregarProducto} = useContext(CartContext);
+    //const {agregarProducto} = useContext(CartContext);
     const [item, setItem] = useState({});
     const {id} = useParams();
+    const dispatch = useDispatch();
+
+    const agregarProducto = (id) => {
+        dispatch(AGREGAR_PRODUCTO_ACTION(id));
+    }
 
     useEffect(() => {
         if (id) {

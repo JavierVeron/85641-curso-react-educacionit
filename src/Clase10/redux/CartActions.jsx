@@ -1,0 +1,7 @@
+import { AGREGAR_PRODUCTO, QUITAR_PRODUCTO, SUMA_PRODUCTOS, TOTAL_PRODUCTOS, VACIAR_CARRITO } from "./CartTypes";
+
+export const AGREGAR_PRODUCTO_ACTION = (id) => ({type:AGREGAR_PRODUCTO, payload:id});
+export const QUITAR_PRODUCTO_ACTION = (id) => ({type:QUITAR_PRODUCTO, payload:id});
+export const VACIAR_CARRITO_ACTION = {type:VACIAR_CARRITO};
+export const TOTAL_PRODUCTOS_ACTION = {type:TOTAL_PRODUCTOS};
+export const SUMA_PRODUCTOS_ACTION = {type:SUMA_PRODUCTOS};

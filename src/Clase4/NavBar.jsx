@@ -1,11 +1,13 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { ThemeContext } from "../Clase6/context/ThemeContext"
-import { CartContext } from "../Clase6/context/CartContext";
+//import { CartContext } from "../Clase6/context/CartContext";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
     const {darkMode, toggleDarkMode} = useContext(ThemeContext);
-    const {cart} = useContext(CartContext);
+    //const {cart} = useContext(CartContext);
+    const total = useSelector(state => state.total);
 
     return (
         <ul className="nav">
@@ -25,7 +27,7 @@ const NavBar = () => {
             </li>
             <li className="d-flex align-items-center">
                 <Link to={"/carrito"} className="text-decoration-none">
-                    <i className="bi bi-cart ps-10"></i> ({cart.length})
+                    <i className="bi bi-cart ps-10"></i> ({total})
                 </Link>
             </li>
         </ul>
